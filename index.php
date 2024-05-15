@@ -23,7 +23,12 @@ $toys = [
     $toy3,
     $toy4,
 ];
-$product1 = new Product('Cuccia per gatti', 49.99, 'gatto', 'Me stesso', 'testImg', 40, 'Italy');
+$product1 = new Product('Cuccia per gatti', 49.99, 'gatto', 'Me stesso', 'testImg', 20, 'Italy');
+$product2 = new Product('Cuccia per cani', 49.99, 'cane', 'Me stesso', 'testImg', 40, 'Italy');
+$products = [
+    $product1,
+    $product2
+];
 
 /* var_dump($food1);
 var_dump($food2);
@@ -52,6 +57,7 @@ var_dump($product1); */
     <main>
         <!-- SEZIONE FOOD -->
         <section id="food">
+            <h3 class="text-center">Solo il meglio dai nostri chef per il tuo amico a quattro zampe!</h3>
             <div class="container d-flex flex-wrap gap-5 my-5">
                 <!-- Singola card Food -->
                 <?php foreach($foods as $food) { ?>
@@ -74,8 +80,9 @@ var_dump($product1); */
         </section>
         <!-- SEZIONE TOY -->
         <section id="toy">
+            <h3 class="text-center">Ecco la selezione dei nostri migliori giochi per il tuo animale del cuore!</h3>
             <div class="container d-flex flex-wrap gap-5 my-5">
-                <!-- Singola card Food -->
+                <!-- Singola card Toy -->
                 <?php foreach($toys as $toy) { ?>
                     <div class="card" style="width: 18rem;" >
                         <img src="https://www.foodpet.it/wp-content/uploads/2022/02/luscious_lamb_pork_2160x.jpg" class="card-img-top" alt="..." style="width: 16rem;">
@@ -85,6 +92,26 @@ var_dump($product1); */
                             <p class="">A soli <?php echo $toy->price ?>€</p>
                             <p class="">Direttamente dai laboratori della <?php echo $toy->brand ?>!</p>
                             <p>Con un grado di <?php echo $toy->squeakynessDegree ?> nella scala della Cigolanza!</p>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
+        <!-- SEZIONE PRODUCT -->
+        <section id="product">
+            <h3 class="text-center">E per un meritato riposino...</h3>
+            <div class="container d-flex flex-wrap gap-5 my-5">
+                <!-- Singola card Product -->
+                <?php foreach($products as $product) { ?>
+                    <div class="card" style="width: 18rem;" >
+                        <img src="https://www.foodpet.it/wp-content/uploads/2022/02/luscious_lamb_pork_2160x.jpg" class="card-img-top" alt="..." style="width: 16rem;">
+                        <div class="card-body">
+                            <p class="fw-bold"><?php echo $product->name ?></p>
+                            <p class="">Pensato apposta per il tuo <?php echo $toy->category ?></p>
+                            <p class="">A soli <?php echo $product->price ?>€</p>
+                            <p class="">Prodotto da <?php echo $product->brand ?>!</p>
+                            <p>Peso massimo sopportabile: <?php echo $product->weight ?> kg.</p>
+                            <p>Made in <?php echo $product->countryOfOrigin ?></p>
                         </div>
                     </div>
                 <?php } ?>
