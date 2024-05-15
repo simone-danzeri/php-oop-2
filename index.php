@@ -14,9 +14,15 @@ $foods = [
     $food4,
 ];
 $toy1 = new Toy('Il pollo matto', 22.99, 'cane', 'Squeaky & Co.', 'testImg', '8/10');
-$toy2 = new Toy('Il pollo matto', 22.99, 'cane', 'Squeaky & Co.', 'testImg', '8/10');
-$toy3 = new Toy('Il pollo matto', 22.99, 'cane', 'Squeaky & Co.', 'testImg', '8/10');
-$toy4 = new Toy('Il pollo matto', 22.99, 'cane', 'Squeaky & Co.', 'testImg', '8/10');
+$toy2 = new Toy('Bong!', 2.99, 'cane', 'Sonoro e Fastidioso', 'testImg', '3/10');
+$toy3 = new Toy('Il topo ballerino', 22.99, 'gatto', 'Squeaky & Co.', 'testImg', '6/10');
+$toy4 = new Toy('Il rotolo rotolante', 22.99, 'cane', 'Squeaky & Co.', 'testImg', '9/10');
+$toys = [
+    $toy1,
+    $toy2,
+    $toy3,
+    $toy4,
+];
 $product1 = new Product('Cuccia per gatti', 49.99, 'gatto', 'Me stesso', 'testImg', 40, 'Italy');
 
 /* var_dump($food1);
@@ -46,7 +52,7 @@ var_dump($product1); */
     <main>
         <!-- SEZIONE FOOD -->
         <section id="food">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="container d-flex flex-wrap gap-5 my-5">
                 <!-- Singola card Food -->
                 <?php foreach($foods as $food) { ?>
                     <div class="card" style="width: 18rem;" >
@@ -68,7 +74,21 @@ var_dump($product1); */
         </section>
         <!-- SEZIONE TOY -->
         <section id="toy">
-            
+            <div class="container d-flex flex-wrap gap-5 my-5">
+                <!-- Singola card Food -->
+                <?php foreach($toys as $toy) { ?>
+                    <div class="card" style="width: 18rem;" >
+                        <img src="https://www.foodpet.it/wp-content/uploads/2022/02/luscious_lamb_pork_2160x.jpg" class="card-img-top" alt="..." style="width: 16rem;">
+                        <div class="card-body">
+                            <p class="fw-bold"><?php echo $toy->name ?></p>
+                            <p class="">Pensato apposta per il tuo <?php echo $toy->category ?></p>
+                            <p class="">A soli <?php echo $toy->price ?>€</p>
+                            <p class="">Direttamente dai laboratori della <?php echo $toy->brand ?>!</p>
+                            <p>Con un grado di <?php echo $toy->squeakynessDegree ?> nella scala della Cigolanza!</p>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
         </section>
     </main>
 <!--Bootstrap JS link-->
