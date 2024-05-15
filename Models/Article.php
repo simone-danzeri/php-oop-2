@@ -6,7 +6,7 @@ class Article {
     public $brand;
     public $img;
     // costruttore
-    public function __construct($_name, $_category, $_price, $_brand, $_img) {
+    public function __construct($_name, $_price, $_category, $_brand, $_img) {
         $this->name = $_name;
         $this->category = $_category;
         $this->price = $_price;
