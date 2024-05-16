@@ -1,12 +1,12 @@
 <?php
 trait Weight {
-    public $weight;
+    protected $weight;
 
     public function getWeight() {
-        $this->weight = $weight;
+        return $this->weight;
     }
     public function setWeight($newWeight) {
-        $this->weight = $newWeight;
+        return $this->weight = $newWeight;
     }
 }
 ?>

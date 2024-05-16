@@ -76,8 +76,8 @@ var_dump($product1); */
                             <p class="fw-bold"><?php echo $food->name ?></p>
                             <p class="">Pensato appositamente per il tuo <?php echo $food->category ?></p>
                             <p class="">A soli <?php echo $food->price ?>€</p>
-                            <?php if($food->weight) { ?>
-                                <p>Questo articolo ha un peso di: <?php echo $food->weight ?>kg.</p>
+                            <?php if($food->getWeight()) { ?>
+                                <p>Questo articolo ha un peso di: <?php echo $food->getWeight() ?>kg.</p>
                             <?php } else { ?>
                                 <p>Peso: non disponibile!</p>
                             <?php } ?>
@@ -106,8 +106,8 @@ var_dump($product1); */
                             <p class="fw-bold"><?php echo $toy->name ?></p>
                             <p class="">Pensato appositamente per il tuo <?php echo $toy->category ?></p>
                             <p class="">A soli <?php echo $toy->price ?>€</p>
-                            <?php if($toy->weight) { ?>
-                                <p>Questo articolo ha un peso di: <?php echo $toy->weight ?>kg.</p>
+                            <?php if($toy->getWeight()) { ?>
+                                <p>Questo articolo ha un peso di: <?php echo $toy->getWeight() ?>kg.</p>
                             <?php } else { ?>
                                 <p>Peso: non disponibile!</p>
                             <?php } ?>
