@@ -1,7 +1,7 @@
 <?php
 trait Weight {
-    protected $weight;
-    
+    public $weight;
+
     public function getWeight() {
         $this->weight = $weight;
     }
